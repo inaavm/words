@@ -1,0 +1,170 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  font-family: monospace, sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+/* Typography */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.word-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
+
+.loading-text {
+  font-size: 18px;
+}
+
+/* Words grid */
+.words-section {
+  margin-bottom: 32px;
+}
+
+.words-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.word-button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.word-button:hover {
+  background-color: #f5f5f5;
+}
+
+.word-button.selected {
+  background-color: #e5e5e5;
+  border-color: #aaa;
+}
+
+/* Buttons */
+.refresh-button {
+  padding: 8px 16px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 32px;
+}
+
+.refresh-button:hover {
+  background-color: #333;
+}
+
+/* Result display */
+.result-container {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 24px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status-badge.found {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.status-badge.not-found {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.wiki-content {
+  background-color: #f9f9f9;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.wiki-snippet {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.wiki-link {
+  color: #1a73e8;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
+}
+
+/* Error messages */
+.error-message {
+  color: #c5221f;
+  margin-bottom: 16px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  color: #777;
+  margin-top: 32px;
+}
+
+/* Mark styling */
+mark {
+  background-color: #fef3c7;
+  padding: 0 2px;
+}
+
