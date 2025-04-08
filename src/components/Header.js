@@ -20,9 +20,9 @@ export default function Header() {
   return (
     <div className="header-container">
       <header className="header">
-        <div className="site-title">readings.design</div>
+        <div className="site-title">Wuertschatz</div>
         <button className="filter-button" onClick={toggleMenu}>
-          FILTER
+          THEMEN
           <span className={`chevron ${isMenuOpen ? "open" : ""}`}>&#9662;</span>
         </button>
       </header>

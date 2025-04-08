@@ -37,31 +37,24 @@ export default function Page() {
       ) : (
         <div className="results-list">
           {wordCollections[category].map((word) => (
-            <a className="result-row" 
-            key={word}
-            href={results[word]?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-
-            <LiaExternalLinkSquareAltSolid
-            className="icon"
-            style={{
-              size:"3"
-            }} />
-              
-              {/* <a
-                href={results[word]?.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="wiki-link"
+              <a className="result-row" 
+              key={word}
+              href={results[word]?.url}
+              target="_blank"
+              rel="noopener noreferrer"
               >
-                ↗
-              </a> */}
-              <div className="word-column">
-                <span className="word-text">{word}</span>
-              </div>
+                <div className="icon-word">
 
+               <div className="icon">
+                <LiaExternalLinkSquareAltSolid 
+                size = {24}/>
+                </div>
+                
+                <div className="word-column">
+                  <span className="word-text">{word}</span>
+                </div>
+
+              </div>
               <div className="snippet-column">
                 {results[word]?.found ? (
                   <span

@@ -1,182 +1,167 @@
 /* Base styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family:"Fira Sans", sans-serif;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    line-height: 1.5;
-    color: #000;
-    background-color: #fff;
-  }
-  
- 
-  .container-results {
-    max-width: 100%;
-    margin: 0 auto;
-    /* margin-top: 1rem; */
-    padding: 0 0px;
-    overflow-y: scroll;
-  }
-  
-  /* Header */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #000;
-  }
-  
-  .site-title {
-    font-size: 1.2rem;
-    font-weight: normal;
-  }
-  
-  .refresh-button {
-    background: none;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .refresh-button:hover {
-    text-decoration: underline;
-  }
-  
-  /* Loading state */
-  .loading {
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  .loading-text {
-    font-size: 16px;
-  }
- 
-  /* .results-list {
-    margin-top: 20px;
-  }  */
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+}
+
+.container-results {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #2a24f6;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.refresh-button:hover {
+  text-decoration: underline;
+}
+
+/* Loading state */
+.loading {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.loading-text {
+  font-size: 16px;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 1.4rem 4rem;
+  text-decoration: none;
+  color: black;
+}
+
+.result-row:hover {
+  background-color: #f3f3f3;
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* FIX: Updated the layout of the row */
+.icon-word {
+  display: flex;
+  align-items: center;
+  width: 30%; /* Fixed width instead of margin */
+  min-width: 200px; /* Ensures the word section doesn't get too small */
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 10px; /* Consistent spacing */
+}
+
+.icon svg {
+  display: block;
+}
+
+.word-column {
+  display: flex;
+  align-items: flex-start;
+}
+
+.word-text {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.word-text:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* FIX: Updated the snippet column to take remaining space */
+.snippet-column {
+  flex: 1; /* Takes up remaining space */
+  padding-left: 20px; /* Consistent spacing */
+}
+
+.wiki-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.wiki-snippet {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  text-decoration: none;
+}
+
+.not-found {
+  color: #777;
+  font-style: italic;
+}
+
+/* Word inside the snippet */
+mark {
+  background-color: transparent;
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .result-row {
-    display: flex;
-    border-bottom: 1px solid black;
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
-    padding-left:4rem;
-    padding-right:4rem;
-  }
-  
-  .result-row:hover {
-   text-decoration: none;
-   color:black;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
+    flex-direction: column;
+    padding: 1.4rem 2rem; /* Reduced padding on mobile */
   }
 
-  .word-column {
-    width: 20%;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .word-text {
-    font-weight: 500;
-    font-size: 20px;
+  .icon-word {
+    width: 100%;
+    margin-bottom: 10px;
   }
 
-    
-  .word-text:hover {
-    color: black;
-    text-decoration: none;
-  }
-  
-  
-  .wiki-link {
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
-  .wiki-link:hover {
-    text-decoration: underline;
-    font-weight: 700;
-  }
-  
   .snippet-column {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    padding-left: 0;
   }
-    
-  .snippet-column a {
-    padding-right: 1rem;
-
-  }
-
-  .snippet-column a:hover {
-    text-decoration: none;
-
-  }
-
-
-  .wiki-snippet {
-    font-size: 16px;
-    line-height: 1.6;
-    color:black;
-    text-decoration: none;
-  }
-
- 
-  .not-found {
-    color: #777;
-    font-style: italic;
-  }
-  
-  /* Word inside the snippet */
-  mark {
-    background-color: transparent;
-    padding: 0 2px;
-    /* text-decoration: underline; */
-    font-weight:600;
-  }
-  
-  .result-row:hover{
-    background-color: #ffff40f1;
-  }
-
-  .icon {
-    width:1rem;
-    height: 1rem;
-  }
-
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .result-row {
-      flex-direction: column;
-    }
-  
-    .word-column,
-    .snippet-column {
-      width: 100%;
-    }
-  
-    .word-column {
-      margin-bottom: 10px;
-    }
-  }
-  
-  
+}
