@@ -22,7 +22,7 @@ const wordCollections = {
     Summer: ["Ancient Rome", "Medieval Ages", "World War II", "Renaissance", "French Revolution"],
     Transport: ["Ancient Rome", "Medieval Ages", "World War II", "Renaissance", "French Revolution"],
     Vakanz: ["Ancient Rome", "Medieval Ages", "World War II", "Renaissance", "French Revolution"],
-    Wunnen: ["Dësch", "Zimmer", "Regal","Luucht","Haus","Appartment","Duerf","Noper","Famill","Elteren","Miwwelen","Bett"],
+    Wunnen: ["Dësch", "Zimmer", "Regal","Luucht","Haus","Appartment","Duerf","Noper","Famill","Elteren","Miwwelen","Bett","Quartier","Gebai","Kaméidi","Verkéier","Awunner","Kiche","Balcon","Gaart","Stack","Schlofzëmmer","Meterkaree","gemittlech","doheem","Stuff","Salon","Kannapee"],
     Stad: ["Ancient Rome", "Medieval Ages", "World War II", "Renaissance", "French Revolution"],
     // Add more collections as needed...
   };

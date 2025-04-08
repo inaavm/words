@@ -79,8 +79,8 @@ a {
 .icon-word {
   display: flex;
   align-items: center;
-  width: 30%; /* Fixed width instead of margin */
-  min-width: 200px; /* Ensures the word section doesn't get too small */
+  width: 20%; /* Fixed width instead of margin */
+  min-width:150px;  
 }
 
 .icon {
