@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: #fef100;
   color: black;
-  padding: 15px 4rem;
+  padding: 15px 3rem;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   flex-wrap: wrap;
@@ -18,7 +18,8 @@
   display: flex;
   background-color: #fef100;
   color: black;
-  padding: 15px 4rem;
+  margin-top: 1rem;
+  padding: 15px 2rem;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   flex-wrap: wrap;
