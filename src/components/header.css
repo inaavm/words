@@ -96,10 +96,9 @@
   display: flex;
   justify-items: center;
   align-items: center;
-  width: 70%;
-  margin: 0 10%;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  width: 50%;
+  margin: 0 0;
+ 
   padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -111,14 +110,15 @@
 .menu-link {
   color: black;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   padding: .3rem 1rem;
-  border: 2px solid black;
-  border-radius: 2rem;
+  border:2px solid black;
+  border-radius: 24px;
   transition: background-color 0.2s ease;
   white-space: nowrap;
   background-color: transparent;
+  text-transform: uppercase;
 
 }
 
@@ -131,13 +131,12 @@
   .dropdown-content {
     padding: 15px;
     gap: 10px;
- 
- 
+    width: 100%;
   }
 
   .menu-link {
-    font-size: 20px;
-    padding: 6px 10px;
+    font-size: 1rem;
+    padding: .3rem 1rem;
   }
 }
 
@@ -150,7 +149,7 @@
 }
 }
 
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 448px) {
 .header {
   padding: 12px 1rem; /* Further reduce padding on small screens */
   display: flex;

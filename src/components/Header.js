@@ -27,6 +27,13 @@ export default function Header() {
     <div className="header-container">
       <header className="header">
 
+      <button className="site-title" onClick={toggleMenu}>
+          THEEMEN
+          <span className={`chevron ${isMenuOpen ? "open" : ""}`}>
+            <FaArrowDown size={18} style={{ marginLeft: "0.5rem" ,}} />
+          </span>
+        </button>
+
         <button className="site-title"
         onClick={() => navigate("/")}>
           WikiWuertschatz
@@ -37,14 +44,6 @@ export default function Header() {
         onClick={() => navigate("/about")}>
           ABOUT
         </button>
-
-        <button className="site-title" onClick={toggleMenu}>
-          THEEMEN
-          <span className={`chevron ${isMenuOpen ? "open" : ""}`}>
-            <FaArrowDown size={18} style={{ marginLeft: "0.5rem" ,}} />
-          </span>
-        </button>
-
 
       </header>
 
