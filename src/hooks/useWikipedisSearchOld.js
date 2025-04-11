@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 
 const useWikipediaSearch = (wordCollection) => {
+    
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  // Track which words are currently being fetched
-  const [pendingWords, setPendingWords] = useState({});
 
   const fetchWikipediaData = async (word) => {
     try {
@@ -50,46 +49,24 @@ const useWikipediaSearch = (wordCollection) => {
     setLoading(true);
     setError("");
     setResults({});
-    
-    // Initialize pending state for all words
-    const initialPending = {};
-    wordCollection.forEach(word => {
-      initialPending[word] = true;
-    });
-    setPendingWords(initialPending);
 
-    // Process all words in parallel instead of sequentially
-    const promises = wordCollection.map(async (word) => {
-      // Add a small random delay to prevent all requests firing at exactly the same time
-      await new Promise((resolve) => setTimeout(resolve, Math.random() * 100));
+    const newResults = {};
+
+    for (const word of wordCollection) {
       const result = await fetchWikipediaData(word);
-      
-      // Update results as they come in
-      setResults(prevResults => ({
-        ...prevResults,
-        [word]: result
-      }));
-      
-      // Mark this word as no longer pending
-      setPendingWords(prev => ({
-        ...prev,
-        [word]: false
-      }));
-      
-      return { word, result };
-    });
+      newResults[word] = result;
+      await new Promise((resolve) => setTimeout(resolve, 300));
+    }
 
-    await Promise.all(promises);
+    setResults(newResults);
     setLoading(false);
   };
 
   useEffect(() => {
-    setResults({});
-    setLoading(true);
     checkWords();
-  }, [JSON.stringify(wordCollection)]);
+  }, [wordCollection]);
 
-  return { results, loading, error, pendingWords };
+  return { results, loading, error };
 };
 
 export default useWikipediaSearch;

@@ -1,0 +1,102 @@
+.home-container-parent {
+  display: flex;
+  flex-direction: column;
+  background-color: #fef100;
+  color: black;
+  padding: 15px 4rem;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  background-color: #fef100;
+  color: black;
+  padding: 15px 4rem;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 70%;
+  align-items: center;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border: 3px solid black;
+  border-radius: 4rem;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+.link:hover {
+  background-color: white;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red"/></svg>') 10 10, pointer;
+}
+
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+  
+}
+
+.about-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:start;
+  width: 60%;
+}
+
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-text p {
+  margin-bottom: 20px;   
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;   
+}
+
+@media (max-width: 768px) {
+  .home-container-parent {
+    background-color: #fef100;
+      width: 100%;
+      padding: 15px 2rem; /* Reduced side padding for mobile */
+      justify-content: center; /* Left align the container */
+      
+  }
+
+  .home-container {
+    background-color: #fef100;
+      max-width: 50%; /* Take full width on mobile */
+      padding: 15px 0; /* Remove horizontal padding */
+      justify-content: center; /* Left align the links */
+      align-items: flex-start; /* Align items to the top */
+  }
+
+  .link {
+      font-size: 2.5rem; /* Slightly smaller font size for mobile */
+  }
+}

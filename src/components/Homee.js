@@ -5,6 +5,7 @@ import wordCollections from "../data/wordCollections"; // Import the consolidate
 import { useParams } from "react-router-dom"; // For dynamic routing
 import "./page.css";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 
 function HomePage() {

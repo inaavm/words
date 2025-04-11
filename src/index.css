@@ -6,6 +6,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5" fill="black"/></svg>') 8 8, auto;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -18,9 +23,18 @@ code {
   margin: 0;
   padding: 0;
   font-family:"Fira Sans", sans-serif;  
-}
  
-.container-app{
+ 
+}
+
+
+ .container-app{
   display: flex;
   flex-direction: column;
-}
+  height:100%;
+  width: 100vw;
+ 
+} 
+
+  
+
