@@ -30,6 +30,7 @@
     background-color:transparent;
     border: none;
     padding: 0.2rem 1rem;
+    color:black;
   }
 
   .site-title:hover {
