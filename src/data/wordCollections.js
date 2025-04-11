@@ -14,7 +14,7 @@ const wordCollections = {
     "Manager",
     "Mataarbechter",
     "Partner",
-    "Réunion",
+    "Reunioun", 
     "Saachen",
     "Sëtz",
     "Stonneplang",
@@ -142,8 +142,8 @@ const wordCollections = {
     "spannend"
   ],
 
-  Markt: [ 
-    "Bio",
+  Maart: [ 
+    "Maart",
     "Fësch",
     "Geméismaart",
     "Handwierk",
@@ -153,7 +153,7 @@ const wordCollections = {
     "Produkter",
     "Produzenten",
     "Stänn",
-    "Zuelersentwerten"
+    "Bott",
   ],
 
   Medien: [ 
