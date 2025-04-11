@@ -91,7 +91,7 @@
 
   .home-container {
     background-color: #fef100;
-      max-width: 50%; /* Take full width on mobile */
+      max-width: 100%;  
       padding: 15px 0; /* Remove horizontal padding */
       justify-content: center; /* Left align the links */
       align-items: flex-start; /* Align items to the top */
