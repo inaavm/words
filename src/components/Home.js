@@ -25,7 +25,7 @@ const links = Object.keys(wordCollections).map((category) => ({
   return (
  
     <div className="home-container-parent">
-        <h1> WUERTSCHATZ</h1>
+        <h1> WikiWuertschatz</h1>
          <div className="home-container">
         {links.map((link, index) => (
           <Link
