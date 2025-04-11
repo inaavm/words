@@ -4,7 +4,7 @@ const wordCollections = {
     "Aarbecht",
     "Ambiance",
     "Auer",
-    "Arbechtswee",
+ 
     "Ausland",
     "Beruff",
     "Client",
@@ -23,7 +23,7 @@ const wordCollections = {
     "Kostüm",
     "Liewensqualitéit",
     "liewen",
-    "Pensionssystem",
+    
     "Schoul",
     "Universitéit"
   ],
