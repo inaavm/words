@@ -169,5 +169,23 @@
   }
   .site-title{
     padding: .5rem;
+
   }
+
+  .dropdown-menu.open {
+    max-height: 500px; 
+    border-bottom: 1px solid black;
+    overflow-y: auto;
+    position: relative;
+ 
+  }
+  .dropdown-content {
+    height: 100%; 
+ 
+    overflow-y: auto;
+    position: relative;
+ 
+  }
+
+  
 }
