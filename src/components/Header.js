@@ -29,7 +29,7 @@ export default function Header() {
 
         <button className="site-title"
         onClick={() => navigate("/")}>
-          WUERTSCHATZ
+          WikiWuertschatz
         </button>
 
                 
