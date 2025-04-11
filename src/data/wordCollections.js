@@ -154,6 +154,7 @@ const wordCollections = {
     "Produzenten",
     "Stänn",
     "Bott",
+    "Oktav-Mäertchen"
   ],
 
   Medien: [ 

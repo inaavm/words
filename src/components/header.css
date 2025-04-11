@@ -1,191 +1,191 @@
 /* Header styles */
 .header-container {
-    position: relative;
-    width: 100%;
-   
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:#fef100;
+  position: relative;
+  width: 100%;
  
-    color:black;
-    padding: 15px 4rem;
-    padding-left: 4rem;
-   font-family: "Fira Sans", sans-serif;
-   font-weight: 400;
-   width: 100%;
-   box-sizing: border-box;
-  }
-  
+}
 
-  .site-title {
-    font-size: 1rem;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
-    background-color:transparent;
-    border: none;
-    padding: 0.2rem 1rem;
-    color:black;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#fef100;
 
-  .site-title:hover {
-    cursor: pointer;
-
-  }
+  color:black;
+  padding: 15px 4rem;
+  padding-left: 4rem;
+ font-family: "Fira Sans", sans-serif;
+ font-weight: 400;
+ width: 100%;
+ box-sizing: border-box;
+}
 
 
-  
-  .filter-button {
-    font-size: 1rem;
-    background: none;
-    border: none;
-    color:black;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    letter-spacing: 0.5px;
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
-    background-color: transparent;
-  }
-  
-  .chevron {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    background-color: transparent;
-  }
-  
-  .chevron.open {
-    transform: rotate(180deg);
-    margin-left: 0.5rem;
-  }
-  
- 
-  .dropdown-menu {
- 
+.site-title {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  background-color:transparent;
+  border: none;
+  padding: 0.2rem 1rem;
+  color:black;
+}
 
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    top: 100%;
-    width: 100%;
-    background-color:#fef100;
-    color: #fff;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    z-index: 100;
-    border-bottom: 1px solid black;
+.site-title:hover {
+  cursor: pointer;
 
-  }
-  
-  .dropdown-menu.open {
-    max-height: 500px; 
-    border-bottom: 1px solid black;
- 
+}
 
-  }
-  
+
+
+.filter-button {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color:black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  letter-spacing: 0.5px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  background-color: transparent;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+  margin-left: 0.5rem;
+}
+
+
+.dropdown-menu {
+
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  top: 100%;
+  width: 100%;
+  background-color:#fef100;
+  color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 100;
+  border-bottom: 1px solid black;
+
+}
+
+.dropdown-menu.open {
+  max-height: 500px; 
+  border-bottom: 1px solid black;
+
+
+}
+
+.dropdown-content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 10%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  background-color:#fef100;
+
+}
+
+.menu-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: .3rem 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  background-color: transparent;
+
+}
+
+.menu-link:hover {
+  background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .dropdown-content {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    width: 70%;
-    margin: 0 10%;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .6rem;
-    background-color:#fef100;
-
+    padding: 15px;
+    gap: 10px;
+ 
+ 
   }
-  
+
   .menu-link {
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: .3rem 1rem;
-    border: 2px solid black;
-    border-radius: 2rem;
-    transition: background-color 0.2s ease;
-    white-space: nowrap;
-    background-color: transparent;
-
-  }
-  
-  .menu-link:hover {
-    background-color: white;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .dropdown-content {
-      padding: 15px;
-      gap: 10px;
-   
-   
-    }
-  
-    .menu-link {
-      font-size: 20px;
-      padding: 6px 10px;
-    }
-  }
-  
-  
-
-/* Responsive styles for smaller screens */
-@media screen and (max-width: 768px) {
-  .header {
-    padding: 15px 2rem; /* Reduce padding on medium screens */
+    font-size: 20px;
+    padding: 6px 10px;
   }
 }
 
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+.header {
+  padding: 15px 2rem; /* Reduce padding on medium screens */
+}
+}
+
 @media screen and (max-width: 413px) {
-  .header {
-    padding: 12px 1rem; /* Further reduce padding on small screens */
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: flex-start;
-    }
-  
-  /* If you have a logo and nav in the header, you might need these too */
-  .header .logo {
-    font-size: 1.2rem; /* Adjust logo size if you have one */
-  }
-  
-  .header .nav-links {
-    margin-top: 2rem; /* Add space if nav wraps to next line */
-  }
-  .site-title{
-    padding: .5rem;
-
+.header {
+  padding: 12px 1rem; /* Further reduce padding on small screens */
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
   }
 
-  .dropdown-menu.open {
-    max-height: 500px; 
-    border-bottom: 1px solid black;
-    overflow-y: auto;
-    position: relative;
- 
-  }
-  .dropdown-content {
-    height: 20rem; 
- 
-    overflow-y: auto;
-    position: relative;
- 
-  }
+/* If you have a logo and nav in the header, you might need these too */
+.header .logo {
+  font-size: 1.2rem; /* Adjust logo size if you have one */
+}
 
-  
+.header .nav-links {
+  margin-top: 2rem; /* Add space if nav wraps to next line */
+}
+.site-title{
+  padding: .5rem;
+
+}
+
+.dropdown-menu.open {
+  max-height: 500px; 
+  border-bottom: 1px solid black;
+  overflow-y: auto;
+  position: relative;
+
+}
+.dropdown-content {
+  height: 20rem; 
+
+  overflow-y: auto;
+  position: relative;
+
+}
+
+
 }
