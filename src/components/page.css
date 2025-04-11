@@ -85,7 +85,7 @@ a {
 .icon-word {
   display: flex;
   align-items: center;
-  width: 18%;
+  width: 22%;
   min-width: 140px;
   flex-shrink: 0;
 }
