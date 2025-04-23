@@ -1,47 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
-
-import MindMap from "./Map";
-import PageHub from "./PageHub";
-import wordCollections from "../data/wordCollections";
-import { Link } from "react-router-dom" // Add this import
-import { useState } from "react"
-
-                // WUERTSCHATZ 
+import categories from "../data/categories";
 
 function Home() {
+  const [expandedWords, setExpandedWords] = useState(new Set());
 
-         
-  const [isMenuOpenHome, setIsMenuOpenHome] = useState(false);
- 
+  const handleToggle = (word) => {
+    const newExpandedWords = new Set(expandedWords);
+    
+    if (newExpandedWords.has(word)) {
+      newExpandedWords.delete(word);
+    } else {
+      newExpandedWords.add(word);
+    }
+    
+    setExpandedWords(newExpandedWords);
+  };
 
-// Dynamically generate the links from the word collections keys
-const links = Object.keys(wordCollections).map((category) => ({
-  name: category.charAt(0).toUpperCase() + category.slice(1), // Capitalize the category name
-  path: `/${category}`, // Path should match the dynamic route
-}));
+  // Function to highlight the word in the sentence
+  const highlightWord = (sentence, wordToHighlight) => {
+    // Case insensitive regular expression to match the word
+    const regex = new RegExp(`\\b(${wordToHighlight})\\b`, 'gi');
+    
+    // Split the sentence by the matching word
+    const parts = sentence.split(regex);
+    
+    return (
+      <>
+        {parts.map((part, i) => {
+          // Every odd index is the matched word
+          if (i % 2 === 1) {
+            return <span key={i} className="highlighted-word">{part}</span>;
+          }
+          return part;
+        })}
+      </>
+    );
+  };
 
+  const renderCategory = (data) => {
+    return Object.entries(data).map(([key, value]) => {
+      const isArray = Array.isArray(value);
+
+      return (
+        <div key={key}>
+          <h3>{key}</h3>
+
+          {isArray ? (
+            <div className="home-container">
+              {value.map(({ word, sentences }, index) => (
+                <div key={index} className="word-block">
+                  <button
+                    className={`link ${
+                      expandedWords.has(word) ? "active" : ""
+                    }`}
+                    onClick={() => handleToggle(word)}
+                  >
+                    {word}
+                  </button>
+
+                  <div
+                    className={`expansion ${expandedWords.has(word) ? "open" : ""}`}
+                  >
+                    {sentences?.length ? (
+                      sentences.map((sentence, idx) => (
+                        <p key={idx}>{highlightWord(sentence, word)}</p>
+                      ))
+                    ) : (
+                      <p>No examples available.</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            renderCategory(value)
+          )}
+        </div>
+      );
+    });
+  };
 
   return (
- 
     <div className="home-container-parent">
-        <h1> WikiWuertschatz</h1>
-         <div className="home-container">
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            to={link.path} // Use Link's 'to' prop to navigate
-            className="link"
-            onClick={() => {
-              setIsMenuOpenHome(false); // Close the menu when a link is clicked
-            }}
-          >
-            {link.name}
-          </Link>
-        ))}
-       </div>
+      {renderCategory(categories)}
     </div>
   );
 }
 
-export default Home
+export default Home;

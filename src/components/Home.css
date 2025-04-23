@@ -1,52 +1,102 @@
 .home-container-parent {
   display: flex;
   flex-direction: column;
-  background-color: #fef100;
-  color: black;
-  padding: 15px 3rem;
+  background-color: white;
+  color: #d3d3d3;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
   width: 100%;
   min-height: 100vh;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .home-container {
   display: flex;
-  background-color: #fef100;
-  color: black;
+  background-color: white;
+  color: #d3d3d3;
   margin-top: 1rem;
-  padding: 15px 2rem;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 80%;
-  align-items: center;
+  justify-content: flex-start;
+ 
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.word-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+ 
 }
 
 .link {
   color: black;
   text-decoration: none;
-  font-size: 2.4rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 1rem 2rem;
-  border: 3px solid black;
+  padding: 14px 16px;
+  border: 2px solid black;
   border-radius: 4rem;
   transition: background-color 0.2s ease;
-  white-space: nowrap;
   background-color: transparent;
+  white-space: normal;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1;
+  z-index: 1;
+  margin-left: 1rem;
 }
 
-.link:hover {
+.link.active {
+  background-color: black;
+  color: white;
+}
+
+/* Expansion container styles */
+.expansion {
+  height: 0; /* Use height instead of max-height */
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  background-color: black;
+  color: white;
+  margin-top: 0.5rem;
+  opacity: 0;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0; /* No padding when closed */
+}
+
+.expansion.open {
+  height: auto; /* Height auto when open */
+  padding: .5rem;
+  opacity: 1;
+  margin-bottom: 0.5rem;
+}
+
+.expansion p {
+  font-size: 1rem;
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+/* Highlighted word style */
+.highlighted-word {
+  font-weight: 700;
+  color: #e9370ae1;
   background-color: white;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red"/></svg>') 10 10, pointer;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+  position: relative;
 }
-
 
 .about-container {
   display: flex;
@@ -54,22 +104,17 @@
   align-items: center;
   margin-top: 2rem;
   width: 100%;
-  
 }
 
-.about-text{
+.about-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:start;
+  align-items: start;
   width: 60%;
-}
-
-
-.about-text {
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: white;
 }
 
 .about-text p {
@@ -82,22 +127,27 @@
 
 @media (max-width: 768px) {
   .home-container-parent {
-    background-color: #fef100;
-      width: 100%;
-      padding: 15px 2rem; /* Reduced side padding for mobile */
-      justify-content: center; /* Left align the container */
-      
+    background-color: white;
+    justify-content: center;
   }
 
   .home-container {
-    background-color: #fef100;
-      max-width: 100%;  
-      padding: 15px 0; /* Remove horizontal padding */
-      justify-content: center; /* Left align the links */
-      align-items: flex-start; /* Align items to the top */
+    background-color: white;
+    max-width: 100%;  
+    justify-content: center;
+    align-items: flex-start; 
   }
-
+  
   .link {
-      font-size: 2.5rem; /* Slightly smaller font size for mobile */
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .expansion.open {
+    padding: .5rem .5rem;
+  }
+  
+  .expansion p {
+    font-size: 1.2rem;
   }
 }
